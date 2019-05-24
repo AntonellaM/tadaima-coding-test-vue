@@ -1,87 +1,53 @@
 <template>
   <div id="app">
-      <div class="section__selection">
-        <SelectedItem
-          v-bind:selectedStates="selectedStates"
-          v-on:del-selected="deleteSelected($event)"
-        />
-        <Multiselector v-bind:states="states" v-on:select-state="selectState($event)"/>
-      </div>
+    <div>
+      <label class="typo__label">Tagging</label>
+      <multiselect
+        v-model="value"
+        tag-placeholder="Add this as new tag"
+        placeholder="Search or add a tag"
+        label="name"
+        track-by="code"
+        :options="options"
+        :multiple="true"
+        :taggable="true"
+        @tag="addTag"
+      >
+        <option v-for="option in options" v-bind:key="option.code" value="option.name">{{ option.name }}</option>
+      </multiselect>
+    </div>
   </div>
 </template>
 
 <script>
-import Multiselector from "./components/Multiselector.vue";
-import SelectedItem from "./components/SelectedItem.vue";
+import Multiselect from "vue-multiselect";
 
 export default {
-  name: "app",
   components: {
-    Multiselector,
-    SelectedItem
+    Multiselect
   },
-
   data() {
     return {
-      states: [],
-      selectedStates: []
+      value: [],
+      options: [
+        { name: "Vue.js", code: "vu" },
+        { name: "Javascript", code: "js" },
+        { name: "Open Source", code: "os" }
+      ]
     };
   },
-
   methods: {
-    selectState(state) {
-      if (this.selectedStates.includes(state)) {
-        this.selectedStates = this.selectedStates.filter(
-        selectedState => selectedState !== state
-      )} else {
-        this.selectedStates = [...this.selectedStates, state];
-      }
-    },
-
-    deleteSelected(state) {
-      this.selectedStates = this.selectedStates.filter(
-        selectedState => selectedState !== state
-      );
+    addTag(newTag) {
+      const tag = {
+        name: newTag,
+        code: newTag.substring(0, 2) + Math.floor(Math.random() * 10000000)
+      };
+      this.options.push(tag);
+      this.value.push(tag);
     }
-  },
-
+  }
   created() {
-    fetch(
-      "https://raw.githubusercontent.com/AntonellaM/american-states-json/master/db.json"
-    )
-      .then(res => res.json())
-      .then(states => (this.states = states));
+    
   }
 };
 </script>
-
-<style lang="scss">
-  #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  body {
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  }
-  .section {
-    &__selection {
-      width: 220px;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-</style>
