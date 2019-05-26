@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import App from './App.vue'
-import Multiselect from './Multiselect'
-import multiselectMixin from './multiselectMixin'
-import pointerMixin from './pointerMixin'
+import App from './components/App/App.vue'
+import Multiselect from './components/Multiselect/Multiselect.vue'
+import multiselectMixin from './components/Multiselect/multiselectMixin'
+import pointerMixin from './components/Multiselect/pointerMixin'
 
 Vue.config.productionTip = false
 

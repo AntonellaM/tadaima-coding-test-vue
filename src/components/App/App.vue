@@ -25,8 +25,7 @@
 </template>
 
 <script>
-import Multiselect from "./Multiselect";
-
+import Multiselect from "./../Multiselect/Multiselect.vue";
 import uuid from "uuid";
 
 export default {
