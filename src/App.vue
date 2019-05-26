@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <div>
+    <div class="multiselect__component-wrapper">
+    
       <label class="typo__label">Selecciona un estado</label>
+            <vue-custom-scrollbar class="scroll-area"  :settings="settings" @ps-scroll-y="scrollHanle">
+
       <multiselect 
-      :class="{invalid:myValue === null}"
+      :class="grey-color"
         v-model="value"
         placeholder="Selecciona un estado"
         label="name"
@@ -13,19 +16,27 @@
         :taggable="true"
         @tag="addState"
       >
-        <option v-for="option in options" v-bind:key="option.code" value="option.name">{{ option }}</option>
+
+        <!-- <option v-for="option in options" v-bind:key="option.code" value="option.name">{{ option }}</option> -->
       </multiselect>
+        </vue-custom-scrollbar>
+
+      <img src="http://utatti.github.io/perfect-scrollbar/azusa.jpg" height="720" width="1280" alt="">
     </div>
   </div>
 </template>
 
 <script>
 import Multiselect from "vue-multiselect";
+import vueCustomScrollbar from 'vue-custom-scrollbar'
+
 import uuid from "uuid";
 
 export default {
   components: {
-    Multiselect
+    Multiselect,
+        vueCustomScrollbar
+
   },
   data() {
     return {
@@ -62,7 +73,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .multiselect__tag {
-    background-color: lightgrey;
+  .grey-color::v-deep .multiselect {
+    .multiselect__tags .multiselect.invalid .multiselect__tags span,
+  .multiselect.invalid .multiselect__tags input {
+    background:blue;
+  }
+}
+  .multiselect__component-wrapper {
+    max-width: 300px;
+  }
+  .multiselect.invalid .multiselect__tags,
+  .multiselect.invalid .multiselect__tags span,
+  .multiselect.invalid .multiselect__tags input {
+    background:blue;
   }
 </style>
