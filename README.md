@@ -11,12 +11,10 @@ In order to develop the current applicaton, the next libraries have been used:
 
 - Vue-multiselect (2.1.4): (https://vue-multiselect.js.org/#sub-select-with-search).
 
-<<<<<<< HEAD
 Following the framework instructions, use the following commands for setting up, compiling and run the project:
 
 ## Project setup
 
-=======
 ## Sources 
 
 With regard to the main knowledge of Vue.js, the chosen sources have been:
@@ -34,7 +32,6 @@ Following the framework instructions, use the following commands for setting up,
 
 ### Project setup
 
->>>>>>> 4d92e467427a9e6eaac315db73315240d48b3463
 ```
 npm install
 ```
