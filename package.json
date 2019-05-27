@@ -1,6 +1,5 @@
 {
   "name": "tadaima-version1",
-  "wst": "/dist/",
   "homepage": "https://github.com/antonellam/tadaima-coding-test-vue",
   "version": "0.1.0",
   "private": true,
