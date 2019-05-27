@@ -1,6 +1,20 @@
-# tadaima-version1
+# Tadaima Coding Test
+
+The aim of this small project is to setup a Vue.js project consisting of:
+
+* A multiselect component allowing both search and tagging.
+* A custom scrollbar for webkit based browsers. 
+
+## Libraries used
+
+In order to develop the current applicaton, the next libraries have been used: 
+
+- Vue-multiselect (2.1.4): (https://vue-multiselect.js.org/#sub-select-with-search).
+
+Following the framework instructions, use the following commands for setting up, compiling and run the project:
 
 ## Project setup
+
 ```
 npm install
 ```
@@ -15,15 +29,3 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
