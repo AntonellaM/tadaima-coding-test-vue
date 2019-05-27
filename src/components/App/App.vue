@@ -1,13 +1,10 @@
 <template>
   <div id="app">
     <div class="multiselect__component-wrapper">
-    
-      <label class="typo__label">Selecciona un estado</label>
-            
-
+      <label class="visually-hidden typo__label">Selecciona un estado</label>
       <multiselect 
         v-model="value"
-        placeholder="Selecciona un estado"
+        placeholder="Selecciona o introduce un estado"
         label="name"
         track-by="code"
         :options="options"
@@ -15,11 +12,7 @@
         :taggable="true"
         @tag="addState"
       >
-
-        <option v-for="option in options" v-bind:key="option.code" value="option.name">{{ option }}</option>
       </multiselect>
-
-      <img src="http://utatti.github.io/perfect-scrollbar/azusa.jpg" height="720" width="1280" alt="">
     </div>
   </div>
 </template>
@@ -67,18 +60,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .grey-color::v-deep .multiselect {
-    .multiselect__tags .multiselect.invalid .multiselect__tags span,
-  .multiselect.invalid .multiselect__tags input {
-    background:blue;
-  }
-}
+
   .multiselect__component-wrapper {
     max-width: 300px;
+    margin: 30px auto;
   }
-  .multiselect.invalid .multiselect__tags,
-  .multiselect.invalid .multiselect__tags span,
-  .multiselect.invalid .multiselect__tags input {
-    background:blue;
+
+  .multiselect {
+    margin-top: 20px;
   }
+
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
 </style>

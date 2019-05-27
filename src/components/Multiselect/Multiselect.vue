@@ -624,6 +624,15 @@ fieldset[disabled] .multiselect {
   z-index: 50;
   -webkit-overflow-scrolling: touch;
 }
+.multiselect__content-wrapper::-webkit-scrollbar {
+  width: 8px;
+  background-color: #eee;
+}
+.multiselect__content-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
 .multiselect__content {
   list-style: none;
   display: inline-block;
