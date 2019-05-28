@@ -1,6 +1,6 @@
  /* eslint-disable */
 
- function isEmpty (opt) {
+function isEmpty (opt) {
   if (opt === 0) return false
   if (Array.isArray(opt) && opt.length === 0) return true
   return !opt

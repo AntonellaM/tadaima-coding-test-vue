@@ -7,17 +7,9 @@ The aim of this small project is to setup a Vue.js project consisting of:
 
 ## Libraries used
 
-In order to develop the current applicaton, the next libraries have been used: 
-
 - Vue-multiselect (2.1.4): (https://vue-multiselect.js.org/#sub-select-with-search).
 
-Following the framework instructions, use the following commands for setting up, compiling and run the project:
-
-## Project setup
-
-## Sources 
-
-With regard to the main knowledge of Vue.js, the chosen sources have been:
+## Documentation used
 
 - Vue general documentation and guide: https://vuejs.org/v2/guide/
 - Vue JS crash course: https://www.youtube.com/watch?v=Wy9q22isx3U&t=2879s
@@ -28,9 +20,16 @@ With regard to the main knowledge of Vue.js, the chosen sources have been:
 - Form validation with Vue.js: https://travishorn.com/form-validation-with-vue-js-4d2e7ba8d2fc
 - Deploy vue-cli 3 project to github pages: https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd
 
-Following the framework instructions, use the following commands for setting up, compiling and run the project:
+According to framework instructions, use the following commands for setting up, compiling and run the project:
 
 ### Project setup
+
+In order to previsualize the project, you can just check the following link: https://antonellam.github.io/tadaima-coding-test-vue/
+
+For further information about coding style and practises, you should:
+
+* Clone this repository
+* Run:
 
 ```
 npm install
@@ -45,4 +44,6 @@ npm run serve
 ```
 npm run build
 ```
+Enjoy the app!
+
 
